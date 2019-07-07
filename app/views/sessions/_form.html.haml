@@ -1,0 +1,10 @@
+-# frozen_string_literal: true
+= form_for(:session, url: sessions_path) do |f|
+  .form-inputs
+    = f.text_field :email
+
+  .form-inputs
+    = f.password_field :password
+
+  .form-actions
+    = f.button :submit

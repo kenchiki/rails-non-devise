@@ -10,16 +10,14 @@
   %body
     #wrapper
       %header#header
-        %p#header-logo= link_to('Rails Application', root_path)
+        %p#header-logo= link_to('RailsNonDevise', root_path)
         %ul#header-nav
-          - if user_signed_in?
-            %li.dropdown
-              = link_to '管理者用', '#', {class: 'dropdown-toggle', 'data-toggle': 'dropdown'}
-              .dropdown-menu
-                = link_to '送料変更', root_path, class: 'dropdown-item'
-            %li= link_to 'ログアウト', destroy_user_session_path, method: :delete
+          - if signed_in?
+            %li= "ログインユーザー：#{current_user.name}"
+            %li= link_to 'sign out', session_path(current_user), method: :delete
           - else
-            %li= link_to 'ログイン', new_user_session_path
+            %li= link_to 'sign up', new_user_path
+            %li= link_to 'sign in', new_session_path
       #container
         = render 'layouts/flash'
         = yield
