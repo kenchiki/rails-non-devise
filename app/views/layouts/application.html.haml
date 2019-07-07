@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title RailsNonDevise
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    #wrapper
+      %header#header
+        %p#header-logo= link_to('Rails Application', root_path)
+        %ul#header-nav
+          - if user_signed_in?
+            %li.dropdown
+              = link_to '管理者用', '#', {class: 'dropdown-toggle', 'data-toggle': 'dropdown'}
+              .dropdown-menu
+                = link_to '送料変更', root_path, class: 'dropdown-item'
+            %li= link_to 'ログアウト', destroy_user_session_path, method: :delete
+          - else
+            %li= link_to 'ログイン', new_user_session_path
+      #container
+        = render 'layouts/flash'
+        = yield

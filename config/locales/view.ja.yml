@@ -1,0 +1,10 @@
+---
+ja:
+  view:
+    confirm: 本当に実行しますか？
+    edit: 編集
+    destroy: 削除
+    sort_up: 一つ上へ
+    sort_down: 一つ下へ
+    sort_top: 一番上へ
+    sort_bottom: 一番下へ

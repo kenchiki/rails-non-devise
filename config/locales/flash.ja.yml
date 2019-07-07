@@ -1,0 +1,10 @@
+---
+ja:
+  notice:
+    create: 追加しました
+    update: 編集しました
+    destroy: 削除しました
+    sort_up: 一つ上に移動しました
+    sort_down: 一つ下に移動しました
+    sort_top: 一番上に移動しました
+    sort_bottom: 一番下に移動しました
